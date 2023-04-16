@@ -4,6 +4,9 @@ import { PrimeiraPagComponent } from './primeira-pag/primeira-pag.component';
 import { SegundaPagComponent } from './segunda-pag/segunda-pag.component';
 import { PaginaNaoEncontradaComponent } from './pagina-nao-encontrada/pagina-nao-encontrada.component';
 import { PaginaComParametrosComponent } from './pagina-com-parametros/pagina-com-parametros.component';
+import { PaginaProtegidaComponent } from './pagina-protegida/pagina-protegida.component';
+import { AuthGuard } from './auth.guard';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
     {path: "primeira-pag", component: PrimeiraPagComponent}, //no navegador use depois de localhost e da porta o /primeira-pag //path significa o caminho
@@ -17,6 +20,9 @@ const routes: Routes = [
     
     { path: 'lazy-loading', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule) }, //o loadChildren: pede um parametro callback que é uma função que são os parentesis() e trazendo um importe do module, entao quando ele pegar esse module por ser um codigo assincrino utiliza-se o .then e carregando o module quando se acessa a url atraves desse m =>
        
+    {path: "pagina-protegida", component: PaginaProtegidaComponent, canActivate:[AuthGuard]},//path: tem que ter o mesmo nome do routerLink no app.component.html //e para acessar a pagina eu to usando o canActivate[AuthGuard]
+
+    {path:"login", component: LoginComponent},
     
     {path: "**", component: PaginaNaoEncontradaComponent} // a partir dos ** ele assumi que n existe nenhuma pagina com aquela descrição na url e mostra o componente PaginaNãoEncontrada // path significa caminho
 ]

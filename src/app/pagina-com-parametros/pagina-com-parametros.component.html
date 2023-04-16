@@ -1,0 +1,7 @@
+<p>pagina-com-parametros works!</p>
+<p>Parametro da rota: {{ id }}</p><br>
+<p *ngIf="nome">Query Param de nome: {{ nome }}</p><br>
+<p *ngIf="idade">Query Param de idade: {{ idade }}</p>
+
+<!--as diretivas *ngif="" é um if para caso não receba nenhuma informação não apareça o paragrafo-->
+<!--para essa pagina aparecer, na barra de url vc deve colocar /pagina-com-parametros/id?nome=joao&idade=45    lembrando que o id é qualquer numero-->

@@ -5,7 +5,7 @@
 <label for="email">E-mail</label>
 <input type="text" id="email" [(ngModel)]="email"> <br><!--não se esqueça que para usar esse [(ngModel)], vc tem que ter no app.module no imports o FormsModule, só assim eu uso essa diretiva que é o two-way data bilding-->
 <label for="senha">Senha</label>
-<input type="text" id="senha" [(ngModel)]="senha"><br>
+<input type="password" id="senha" [(ngModel)]="senha"><br>
 
 <button (click)="login()">Entrar</button><!--noclick vou associar o medoto de login-->
 

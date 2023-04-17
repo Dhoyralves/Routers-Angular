@@ -11,16 +11,18 @@ export class LoginComponent {
   email = "";
   senha = "";
 
-  constructor(
+  constructor( // primeiro eu deixo no ponto todo o service.ts e depois venho pra cá pro construtor
+  //pra usar o service eu injeto o serviço no constructor,atraves do auth:
     private auth: AuthService,
-    private router: Router
+    private router: Router //isso é pra navegar pras paginas
   ){
 
   }
 
-  login(){
+  login(){ //para trabalhar com login, preciso de uma função pra me dizer quando estou logado ou quando não estou logado, e para isso é cria um service.ts de autenticação que vai funcionar com o guard para fazer a autenticação do usuario
+    
     if(this.auth.login(this.email, this.senha)){
-      this.router.navigate(["pagina-protegida"]);
+      this.router.navigate(["pagina-protegida"]); //isso é para navegar para a pagina-protegida
       return;
     }
     alert ("Login Invalido");
@@ -28,3 +30,4 @@ export class LoginComponent {
     this.senha = "";
   }
 }
+//depois disso eu configuro meu guarde e tiro o return false de lá

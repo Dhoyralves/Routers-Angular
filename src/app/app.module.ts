@@ -24,7 +24,7 @@ import { FormsModule } from '@angular/forms';
   imports: [
     BrowserModule,
     AppRoutingModule, //acrescentado do modulo
-    FormsModule //se vc for usar o [(ngModel)], tem que ter esse forms importado aqui
+    FormsModule //se vc for usar a diretiva [(ngModel)], tem que ter esse FormsModule importado aqui, para o two-way data bilding
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   templateUrl: './pagina-protegida.component.html',
   styleUrls: ['./pagina-protegida.component.css']
 })
-export class PaginaProtegidaComponent {
+export class PaginaProtegidaComponent { //ultimo passo é nesse constructor
 
   constructor(
     private auth:AuthService,
@@ -17,7 +17,8 @@ export class PaginaProtegidaComponent {
 
   logout(){
     this.auth.logout();
-    this.router.navigate([""]);
+    this.router.navigate([""]);// aqui é para navegar para rota inicial
 
   }
 }
+//assim que trabalhamos com o guard do canActivate, para permitir ou não as rotas

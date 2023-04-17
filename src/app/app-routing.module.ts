@@ -20,7 +20,7 @@ const routes: Routes = [
     
     { path: 'lazy-loading', loadChildren: () => import('./lazy-loading/lazy-loading.module').then(m => m.LazyLoadingModule) }, //o loadChildren: pede um parametro callback que é uma função que são os parentesis() e trazendo um importe do module, entao quando ele pegar esse module por ser um codigo assincrino utiliza-se o .then e carregando o module quando se acessa a url atraves desse m =>
        
-    {path: "pagina-protegida", component: PaginaProtegidaComponent, canActivate:[AuthGuard]},//path: tem que ter o mesmo nome do routerLink no app.component.html //e para acessar a pagina eu to usando o canActivate[AuthGuard]
+    {path: "pagina-protegida", component: PaginaProtegidaComponent, canActivate:[AuthGuard]},//path: tem que ter o mesmo nome do routerLink no app.component.html //e para acessar a pagina eu to usando o canActivate[AuthGuard] que é o guarda
 
     {path:"login", component: LoginComponent},
     
